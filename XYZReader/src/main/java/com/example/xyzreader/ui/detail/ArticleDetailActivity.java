@@ -49,6 +49,8 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     CollapsingToolbarLayout collapsingToolbarLayout;
     @BindView(R.id.share_fab)
     FloatingActionButton fabButton;
+    @BindView(R.id.pager)
+    ViewPager mPager;
 
     private Cursor mCursor;
     private long mStartId;
@@ -57,7 +59,7 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
     private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
     private int mTopInset;
 
-    private ViewPager mPager;
+
     private MyPagerAdapter mPagerAdapter;
     private View mUpButtonContainer;
     private View mUpButton;
@@ -84,7 +86,6 @@ public class ArticleDetailActivity extends AppCompatActivity implements LoaderMa
         mActionBar = getSupportActionBar();
 
         mPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        mPager = findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
         mPager.setPageMargin((int) TypedValue
                 .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics()));
